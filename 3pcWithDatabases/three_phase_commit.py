@@ -1,13 +1,3 @@
-"""
-Implémentation CORRIGÉE du protocole Three-Phase Commit (3PC)
-avec support pour bases de données SQL locales
-
-CORRECTIONS:
-- Utilisation de WAL mode pour SQLite (permet lectures concurrentes)
-- Logs écrits APRÈS la transaction, pas pendant
-- Gestion correcte des connexions fermées
-"""
-
 import sqlite3
 import enum
 import time

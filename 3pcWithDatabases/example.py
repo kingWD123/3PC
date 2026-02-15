@@ -1,8 +1,3 @@
-"""
-Exemple Corrigé du Protocole 3PC
-Résout les problèmes de verrous SQLite et de fermeture de fichiers
-"""
-
 from three_phase_commit import Coordinator, Participant, Transaction
 import sqlite3
 import uuid
@@ -26,13 +21,13 @@ def creer_bases_donnees():
                     break
                 except PermissionError:
                     time.sleep(0.5)
-                    gc.collect()  # Force garbage collection
+                    gc.collect()  
 
         # Créer la base
         conn = sqlite3.connect(nom_db)
         cursor = conn.cursor()
 
-        # Activer WAL mode (important!)
+        # Activer WAL mode 
         cursor.execute("PRAGMA journal_mode=WAL")
 
         # Table des comptes
